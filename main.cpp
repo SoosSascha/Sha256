@@ -1,5 +1,6 @@
 #include <bitset>
 #include <iostream>
+#include <math.h>
 #include <sstream>
 #include <vector>
 
@@ -99,8 +100,6 @@ std::string Not(std::string s) {
 	return o.str();
 }
 
-// - - - - - - - - - - - - - - - - - - - - - - - -
-
 int main()
 {
 	// Get string as input
@@ -124,7 +123,7 @@ int main()
 	// Get chunck as Vector
 	std::string s = bitFormater(stringToBits(p));
 
-	// Chunckloop start
+	// Chunkloop
 	for (int j = 0; j < s.length() / 512; j++)
 	{
 		std::vector<std::string> v = ChunckFormater(s.substr(j * 512, 512));
@@ -174,7 +173,6 @@ int main()
 		h6 = Add(h6 + g);
 		h7 = Add(h7 + h);
 	}
-	// Chunckloop end
 
 	// Convert to hexadecimal and append all hash values to create one hash
 	std::ostringstream o;
